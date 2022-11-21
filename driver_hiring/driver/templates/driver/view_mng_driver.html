@@ -1,0 +1,48 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>viewmngdriver</title>
+</head>
+<body>
+	<center>
+        <h1><b>View Driver and Manage</b></h1>
+	<form>
+		<table border="2" class="table table-striped">
+			<tr>
+				<th>Username</th>
+				<th>Gender</th>
+				<th>Location</th>
+				<th>Vehicle type</th>
+				<th>Vehicle Number</th>
+				<th>Licence Number</th>
+				<th>Phone Number</th>
+				<th>E-mail</th>
+                <th>status</th>
+                <th></th>
+                <th></th>
+			</tr>
+            {% for i in y %}
+			<tr>
+				<td>{{ i.name }}</td>
+				<td>{{ i.gender }}</td>
+				<td>{{ i.location }}</td>
+				<td>{{ i.vehicle_type }}</td>
+				<td>{{ i.vehicle_number }}</td>
+				<td>{{ i.licence_number }}</td>
+				<td>{{ i.phone_no }}</td>
+				<td>{{ i.email}}</td>
+                <td>{{ i.status }}</td>
+{#                <td><a href="{% url 'emp_approve' idd=i.emp_id %}" class="btn btn-primary">APPROVE</a></td>#}
+				<td><a href="{% url 'driver_app' idd=i.driver_id %}" class=" btn btn-primary">Approve</a></td>
+				<td><a href="{% url 'driver_rej' idd=i.driver_id %}" class=" btn btn-primary">Reject</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+</center>
+
+</body>
+</html>
+{% endblock %}

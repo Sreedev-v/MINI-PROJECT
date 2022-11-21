@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW SCHEDULE</title>
+</head>
+<body>
+	<center>
+        <h1><b>VIEW SCHEDULE AND MANAGE</b></h1>
+	<form>
+		<table border="2" class="table table-striped">
+			<tr>
+                <td>Username</td>
+				<td>Driver name</td>
+				<td>Place</td>
+				<td>Starting Time</td>
+				<td>Ending Time</td>
+            </tr>
+            {% for i in vv %}
+
+			<tr>
+				<td>{{ i.driver_id }}</td>
+				<td>{{ i.place }}</td>
+				<td>{{ i.starting_time }}</td>
+				<td>{{ i.ending_time }}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+</center>
+
+</body>
+</html>

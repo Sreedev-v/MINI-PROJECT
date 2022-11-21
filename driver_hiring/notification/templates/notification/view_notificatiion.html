@@ -1,0 +1,31 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View notification</title>
+</head>
+<body>
+	<center>
+        <h1><b>View Notification</b></h1>
+		<form>
+			<table border="2" class="table table-striped">
+				<tr>
+					<th>Notification</th>
+                    <th>Date</th>
+                    <th>Time</th>
+				</tr>
+                {% for i in aa %}
+				<tr>
+					<td>{{ i.notification }}</td>
+                    <td>{{ i.date }}</td>
+                    <td>{{ i.time }}</td>
+					
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+</body>
+</html>
+{% endblock %}

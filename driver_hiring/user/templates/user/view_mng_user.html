@@ -1,0 +1,37 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view and manage user</title>
+</head>
+<body>
+	<center>
+        <h1> <b>View User and Manage</b></h1>
+		<table border="2" class="table table-striped">
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Location</th>
+				<th>Phone</th>
+                <th>status</th>
+                <th></th>
+                <th></th>
+			</tr>
+            {% for i in dd %}
+			<tr>
+				<td>{{ i.name }}</td>
+				<td>{{ i.age }}</td>
+				<td>{{ i.location }}</td>
+				<td>{{ i.phone_number }}</td>
+                <td>{{ i.status }}</td>
+				<td><a href="/user/aprv/{{ i.user_id }}"class="btn btn-primary">Approve</a></td>
+				<td><a href="/user/rjct/{{ i.user_id }}" class="btn btn-primary">Reject </a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

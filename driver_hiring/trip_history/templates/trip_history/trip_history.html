@@ -1,0 +1,35 @@
+{% extends 'temp/driver.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view trip history</title>
+</head>
+<body>
+	<center>
+	<h1><b> VIEW TRIP HISTORY</b></h1>
+	<form>
+		<table border="2">
+			<tr>
+				<th>Username</th>
+				<th>Place</th>
+				<th>Starting Time</th>
+				<th>Ending Time</th>
+				<th>Total Amount</th>
+			</tr>
+            {% for i in vv %}
+			<tr>
+				<td>{{ i.u }}</td>
+				<td>{{ i.place }}</td>
+				<td>{{ i.starting_time }}</td>
+				<td>{{ i.ending_time }}</td>
+				<td>{{ i.total_cost }}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+</center>
+
+</body>
+</html>
+{% endblock %}

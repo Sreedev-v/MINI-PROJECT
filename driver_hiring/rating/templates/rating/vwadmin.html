@@ -1,0 +1,47 @@
+{% extends 'temp/driver.html' %}
+{%  block base %}
+<body>
+<table>
+    {%  for i in kk %}
+    <tr>
+        <td>
+               <div>
+{#               <p>hello{{ i.rating }}</p>#}
+                   {% if i.rating == "1" %}
+                       <img src="/static/img/rat1.jpg" height="100" width="150">
+                                           {{ i.user.name }}
+
+                   {% endif %}
+                    {% if i.rating == "2" %}
+                       <img src="/static/img/rat2.jpg"  height="100" width="150">
+                                           {{ i.user.name }}
+
+
+                   {% endif %}
+               {% if i.rating == "3" %}
+                       <img src="/static/img/rat3.jpg"  height="100" width="150">
+                                           {{ i.user.name }}
+
+                   {% endif %}
+               {% if i.rating == "4" %}
+                       <img src="/static/img/rat4.jpg"  height="100" width="150">
+                                           {{ i.user.name }}
+
+
+                   {% endif %}
+               {% if i.rating == "5" %}
+                       <img src="/static/img/rat5.jpg"  height="100" width="150">
+                                           {{ i.user.name }}
+
+
+                   {% endif %}
+{#                   <input type="radio" id="star5" name="rate" checked />#}
+{#                   {{ i.rating }}<label for="star5" title="text" data-value="{{ i.rating }}"></label>#}
+
+               </div> </td>
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+{% endblock %}

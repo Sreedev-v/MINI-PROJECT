@@ -1,0 +1,26 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view location and update</title>
+</head>
+<body>
+	<center>
+        <h1><b>View Location and Update</b></h1>
+		<table border="2" class="table table-striped">
+			<tr>
+				<th>Location</th>
+			</tr>
+            {% for i in pp %}
+			<tr>
+				<td>{{ i.place }}</td>
+				<td><a href="/schedule/update/{{i.schedule_id}}" class="btn btn-primary">Update</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

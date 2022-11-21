@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>viewmngdriver</title>
+</head>
+<body>
+	<center>
+        <h1><b>View Updated Driver</b></h1>
+	<form>
+		<table border="2" class="table table-striped">
+			<tr>
+				<th>Username</th>
+				<th>Gender</th>
+				<th>Location</th>
+				<th>Vehicle type</th>
+				<th>Vehicle Number</th>
+				<th>Licence Number</th>
+				<th>Phone Number</th>
+				<th>E-mail</th>
+			</tr>
+            {% for i in xx %}
+			<tr>
+				<td>{{ i.name}}</td>
+				<td>{{ i.gender }}</td>
+				<td>{{ i.location }}</td>
+				<td>{{ i.vehicle_type }}</td>
+				<td>{{ i.vehicle_number }}</td>
+				<td>{{ i.licence_number }}</td>
+				<td>{{ i.phone_no }}</td>
+				<td>{{ i.email}}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+</center>
+
+</body>
+</html>

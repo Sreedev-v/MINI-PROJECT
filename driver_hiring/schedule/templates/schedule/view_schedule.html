@@ -1,0 +1,38 @@
+{% extends 'temp/driver.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW SCHEDULE</title>
+</head>
+<body>
+	<center>
+        <h1><b>VIEW SCHEDULE AND MANAGE</b></h1>
+	<form>
+		<table border="2" class="table table-striped">
+			<tr>
+				<td>Driver name</td>
+				<td>Place</td>
+				<td>Starting Time</td>
+				<td>Ending Time</td>
+            </tr>
+            {% for i in vv %}
+
+			<tr>
+				<td>{{ i.driver.name }}</td>
+				<td>{{ i.place }}</td>
+				<td>{{ i.starting_time }}</td>
+				<td>{{ i.ending_time }}</td>
+				<td><a href="/schedule/appr/{{ i.schedule_id }}" class="btn btn-primary">Approve/Notify</a></td>
+				<td><a href="/schedule/reje/{{ i.schedule_id }}" class="btn btn-primary">Reject</a></td>
+                <td><a href="{% url 'py2' idd=i.schedule_id %}" class="btn btn-primary">Payment</a></td>
+
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+</center>
+
+</body>
+</html>
+{% endblock %}

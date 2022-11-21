@@ -1,0 +1,29 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Location</title>
+</head>
+<body>
+	<center>
+        <h1><b>View Location</b></h1>
+	<form>
+		<table border="2" class="table table-striped">
+			<tr>
+				<td><b>Location:</b></td>
+				
+			</tr>
+			{% for i in kk %}
+			<tr>
+				<td>{{ i.place}}</td>
+{#				<td></td>#}
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view payment</title>
+</head>
+<body>
+	<center>
+        <h1><b>View and Update Payment</b> </h1>
+		<form>
+			<table border="2" class="table table-striped">
+				<tr>
+					<th>Username</th>
+					<th>Amount</th>
+					<th>Date</th>
+					<th>Time</th>
+				</tr>
+                {% for i in dd %}
+				<tr>
+					<td>{{ i.user.name }}</td>
+					<td>{{ i.amount }}</td>
+					<td>{{ i.date }}</td>
+					<td>{{ i.time }}</td>
+					<td><a href="/payment/update/{{ i.pay_id }}" class="btn btn-primary">Update</a></td>
+				</tr>
+                 {% endfor %}
+			</table>
+			
+		</form>
+	</center>
+
+</body>
+</html>
+{% endblock %}
